@@ -5,11 +5,11 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import Login from "../Login/Login";
-import ProfileAdd from "../Profile/ProfileAdd";
+import Login from "../Components/Login/Login";
+import ProfileAdd from "../Components/Profile/ProfileAdd";
 import PrivateRoutes from "./PrivateRoutes";
-import Home from "../Home";
-import Profile from "../Profile/Profile";
+import Home from "../Components/Home";
+import Profile from "../Components/Profile/Profile";
 
 const MainRoutes = () => {
   return (
