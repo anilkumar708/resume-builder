@@ -1,10 +1,20 @@
-import styled from "@emotion/styled";
-import { Button, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AppDispatch, RootState } from "../../Services/Store";
 import { fetchProfile } from "../../Services/ProfileSlice";
+import {
+  ProfileDetails,
+  BasicDetails,
+} from "../../StyledComponents/StyledProfile";
+import {
+  Info,
+  Title,
+  SubTitle,
+  Text,
+  Add,
+} from "../../StyledComponents/StyledComponent";
 
 const Profile = () => {
   const profileData = {
@@ -43,123 +53,86 @@ const Profile = () => {
     }
   }, [dispatch]);
   const handleChange = () => {
-    navigate("/profile");
+    navigate("/profileadd");
   };
   return (
     <>
       <Container>
-        <Typography variant="h6">Profile Information</Typography>
+        <Title>Profile Details</Title>
         <ProfileDetails>
           <Info>
             <BasicDetails>
-              <Title>Name:</Title>
-              <Typography> {userData.name}</Typography>
+              <SubTitle>Name:</SubTitle>
+              <Text> {userData.name}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Email:</Title>
-              <Typography> {userData.email}</Typography>
+              <SubTitle>Email:</SubTitle>
+              <Text> {userData.email}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Mobile Number:</Title>
-              <Typography> {userData.number}</Typography>
+              <SubTitle>Mobile Number:</SubTitle>
+              <Text> {userData.number}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>DOB:</Title>
-              <Typography> {userData.date}</Typography>
+              <SubTitle>DOB:</SubTitle>
+              <Text> {userData.date}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Gender:</Title>
-              <Typography>{userData.gender}</Typography>
+              <SubTitle>Gender:</SubTitle>
+              <Text>{userData.gender}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Address:</Title>
-              <Typography>{userData.address}</Typography>
+              <SubTitle>Address:</SubTitle>
+              <Text>{userData.address}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Passport:</Title>
-              <Typography>{userData.passport}</Typography>
+              <SubTitle>Passport:</SubTitle>
+              <Text>{userData.passport}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Language:</Title>
-              <Typography> {userData.language}</Typography>
+              <SubTitle>Language:</SubTitle>
+              <Text> {userData.language}</Text>
             </BasicDetails>
           </Info>
           <Info>
             <BasicDetails>
-              <Title>Base Location:</Title>
-              <Typography> {userData.location}</Typography>
+              <SubTitle>Base Location:</SubTitle>
+              <Text> {userData.location}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Highest Education:</Title>
-              <Typography>{userData.location}</Typography>
+              <SubTitle>Highest Education:</SubTitle>
+              <Text>{userData.location}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Last Company:</Title>
-              <Typography>{userData.location}</Typography>
+              <SubTitle>Last Company:</SubTitle>
+              <Text>{userData.location}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Skills:</Title>
-              <Typography>{userData.skills}</Typography>
+              <SubTitle>Skills:</SubTitle>
+              <Text>{userData.skills}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Married:</Title>
-              <Typography> {userData.married}</Typography>
+              <SubTitle>Married:</SubTitle>
+              <Text> {userData.married}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Father:</Title>
-              <Typography> {userData.father}</Typography>
+              <SubTitle>Father:</SubTitle>
+              <Text> {userData.father}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Mother:</Title>
-              <Typography> {userData.mother}</Typography>
+              <SubTitle>Mother:</SubTitle>
+              <Text> {userData.mother}</Text>
             </BasicDetails>
             <BasicDetails>
-              <Title>Siblings:</Title>
-              <Typography> {userData.siblings}</Typography>
+              <SubTitle>Siblings:</SubTitle>
+              <Text> {userData.siblings}</Text>
             </BasicDetails>
           </Info>
         </ProfileDetails>
-        <Add onClick={handleChange}>Add Details</Add>
+        <Add onClick={handleChange}>Click here to add profile</Add>
       </Container>
     </>
   );
 };
-const Container = styled.section`
-  display: unset; /* Enable flexbox */
-  width: 100%;
-`;
-const ProfileDetails = styled.section`
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-`;
-const Info = styled.aside`
-  border: 1px solid black;
-  width: 80%;
-  padding: 10px;
-`;
-const Summery = styled.div`
-  padding: 5px;
-  margin: 5px 0px;
-  border: 1px solid lightblue;
-`;
-const BasicDetails = styled.div`
-  display: flex;
-  padding: 5px;
-  margin: 5px 0px;
-  border: 1px solid lightblue;
-  &:nth-child(odd) {
-    background-color: #f1f1f1;
-  }
-`;
-const Title = styled(Typography)`
-  font-size: 16px;
-  padding-right: 5px;
-  font-weight: 600;
-`;
-const Add = styled(Button)`
-  background-color: #d8dde1;
-  margin-top: 10px;
-`;
 
 export default Profile;

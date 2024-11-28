@@ -10,6 +10,8 @@ import ProfileAdd from "../Components/Profile/ProfileAdd";
 import PrivateRoutes from "./PrivateRoutes";
 import Home from "../Components/Home";
 import Profile from "../Components/Profile/Profile";
+import EducationAdd from "../Components/Education/EducationAdd";
+import Education from "../Components/Education/Education";
 
 const MainRoutes = () => {
   return (
@@ -18,10 +20,12 @@ const MainRoutes = () => {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route element={<PrivateRoutes />}>
-          <Route path="addprofile" element={<ProfileAdd />} />
+          <Route path="profileadd" element={<ProfileAdd />} />
+          <Route path="educationadd" element={<EducationAdd />} />
         </Route>
         <Route path="home" element={<Home />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="education" element={<Education />} />
       </Routes>
     </Router>
   );

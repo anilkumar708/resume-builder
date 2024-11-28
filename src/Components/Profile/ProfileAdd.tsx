@@ -1,18 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
-  TextField,
   Select,
   MenuItem,
   InputLabel,
   FormControl,
   Button,
   Typography,
-  TextareaAutosize,
 } from "@mui/material";
-import styled from "@emotion/styled";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addProfile } from "../../Services/ProfileSlice";
-import { AppDispatch, RootState } from "../../Services/Store";
+import { AppDispatch } from "../../Services/Store";
+import {
+  Textarea,
+  StyledTextField,
+} from "../../StyledComponents/StyledProfile";
+import { Add, SubTitle, Title } from "../../StyledComponents/StyledComponent";
 
 const ProfileAdd = () => {
   const ProfileData = {
@@ -49,8 +51,9 @@ const ProfileAdd = () => {
 
   return (
     <>
-      <Container>
-        <Typography variant="h6">Person Details</Typography>
+      <form onClick={handleSubmit}>
+        <Title>Add Profile</Title>
+        <SubTitle>Family Details</SubTitle>
         <StyledTextField
           type="text"
           name="name"
@@ -150,7 +153,7 @@ const ProfileAdd = () => {
           placeholder="Profile summery"
         />
 
-        <Typography variant="h6">Family Details</Typography>
+        <SubTitle>Family Details</SubTitle>
         <StyledTextField
           label="Father"
           name="father"
@@ -193,38 +196,10 @@ const ProfileAdd = () => {
           </Select>
         </FormControl>
         {/* if yes provide names */}
-        <Button
-          variant="contained"
-          color="primary"
-          type="submit"
-          fullWidth
-          onClick={handleSubmit}
-        >
-          Submit
-        </Button>
-      </Container>
+        <Add type="submit">Submit</Add>
+      </form>
     </>
   );
 };
 
-const Container = styled.section`
-  display: unset; /* Enable flexbox */
-  width: 100%;
-`;
-const StyledTextField = styled(TextField)`
-  width: 32%;
-  margin: 6px;
-  align: left;
-`;
-const Textarea = styled(TextareaAutosize)`
-  box-sizing: border-box;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  padding: 17px 12px;
-  border-radius: 4px;
-  line-height: 20px;
-  width: 65.2%;
-  margin: 6px;
-`;
 export default ProfileAdd;

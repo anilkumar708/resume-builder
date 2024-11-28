@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
-import styled from "@emotion/styled";
+import { InputField } from "../../StyledComponents/StyledComponent";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -95,10 +95,5 @@ const Login = () => {
     </>
   );
 };
-const InputField = styled.input`
-  margin: 5px 0px;
-  padding: 8px 10px;
-  width: 100%;
-`;
 
 export default Login;

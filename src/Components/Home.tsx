@@ -1,6 +1,13 @@
-import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import {
+  BasicDetails,
+  Title,
+  Summery,
+  Info,
+  ProfileDetails,
+  Container,
+} from "../StyledComponents/StyledComponent";
 
 const Home = () => {
   const profileData = {
@@ -80,39 +87,5 @@ const Home = () => {
     </>
   );
 };
-
-const Container = styled.section`
-  display: unset;
-  width: 100%;
-`;
-const ProfileDetails = styled.section`
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-`;
-const Info = styled.aside`
-  border: 1px solid black;
-  width: 80%;
-  padding: 10px;
-`;
-const Summery = styled.div`
-  padding: 5px;
-  margin: 5px 0px;
-  border: 1px solid lightblue;
-`;
-const BasicDetails = styled.div`
-  display: flex;
-  padding: 5px;
-  margin: 5px 0px;
-  border: 1px solid lightblue;
-  &:nth-child(odd) {
-    background-color: #f1f1f1;
-  }
-`;
-const Title = styled(Typography)`
-  font-size: 16px;
-  padding-right: 5px;
-  font-weight: 600;
-`;
 
 export default Home;
